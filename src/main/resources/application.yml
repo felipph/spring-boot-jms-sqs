@@ -5,11 +5,11 @@ cloud:
     region:
       static: us-east-1
     credentials:
-      access-key: ANUJDEKAVADIYAEXAMPLE
-      secret-key: 2QvM4/Tdmf38SkcD/qalvXO4EXAMPLEKEY
+      access-key: access_key
+      secret-key: secret_key
     queue:
       uri: http://localhost:4566
-      name: sample-queue.fifo
+      name: default-queue
     end-point:
       uri: http://localhost:4566
 
@@ -17,5 +17,6 @@ cloud:
 consumer:
   sqs:
     message:
-      queue:
-        name: 'sample-queue.fifo'
+      default-queue-name: 'default-queue'
+      s3-create-file: 'upload-file-event-sqs'
+      s3-delete-file: 'delete-file-event-sqs'

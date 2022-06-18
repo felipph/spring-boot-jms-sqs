@@ -9,7 +9,7 @@ import java.util.Map;
 
 @Service
 public class JMSConsumer {
-    @JmsListener(destination = "${consumer.sqs.message.queue.name}")
+    @JmsListener(destination = "${consumer.sqs.message.default-queue-name}")
     public void messageConsumer(@Headers Map<String, Object> messageAttributes,
                                 @Payload String message) {
         // Do something

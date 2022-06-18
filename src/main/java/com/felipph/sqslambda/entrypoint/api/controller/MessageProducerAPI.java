@@ -16,7 +16,7 @@ import java.util.UUID;
 public class MessageProducerAPI {
     private final JmsTemplate defaultJmsTemplate;
 
-    @Value("${consumer.sqs.message.queue.name}")
+    @Value("${consumer.sqs.message.default-queue-name}")
     private String queue;
 
 
@@ -28,8 +28,8 @@ public class MessageProducerAPI {
     ResponseEntity<String> putMessage(@RequestParam("msg") String message) {
         JmsMessagingTemplate template = new JmsMessagingTemplate(this.defaultJmsTemplate);
         Map<String, Object> headers = new HashMap<>();
-        headers.put("JMSXGroupID", "2");
-        headers.put("JMS_SQS_DeduplicationId", UUID.randomUUID().toString());
+//        headers.put("JMSXGroupID", "2");
+//        headers.put("JMS_SQS_DeduplicationId", UUID.randomUUID().toString());
         template.convertAndSend(queue, message, headers);
         return ResponseEntity.ok("Enviado: "+message);
     }

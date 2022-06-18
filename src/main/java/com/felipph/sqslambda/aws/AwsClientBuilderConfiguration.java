@@ -64,8 +64,8 @@ public class AwsClientBuilderConfiguration {
     AmazonSQS sqsClient() {
 
         return AmazonSQSClient.builder().withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(sqsUrl, region))
-                .withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials(accessKeyId, secretAccessKey))).
-                build();
+                .withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials(accessKeyId, secretAccessKey)))
+                .build();
     }
 
 
