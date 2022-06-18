@@ -1,0 +1,21 @@
+cloud:
+  aws:
+    stack:
+      auto: false
+    region:
+      static: us-east-1
+    credentials:
+      access-key: ANUJDEKAVADIYAEXAMPLE
+      secret-key: 2QvM4/Tdmf38SkcD/qalvXO4EXAMPLEKEY
+    queue:
+      uri: http://localhost:4566
+      name: sample-queue.fifo
+    end-point:
+      uri: http://localhost:4566
+
+
+consumer:
+  sqs:
+    message:
+      queue:
+        name: 'sample-queue.fifo'
