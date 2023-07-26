@@ -3,6 +3,7 @@
 # Retirado de https://github.com/polovyivan/localstack-s3-events-to-sqs/blob/main/docker-compose/init-scripts/01-create-sqs.sh
 #
 
+echo "########### SCRIPT DE INIT###########"
 echo "########### Setting up localstack profile ###########"
 aws configure set aws_access_key_id access_key --profile=localstack
 aws configure set aws_secret_access_key secret_key --profile=localstack
